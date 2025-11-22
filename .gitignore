@@ -1,0 +1,24 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Airflow
+logs/
+plugins/
+airflow.db
+airflow-webserver.pid
+
+# Docker
+*.log
+
+# Build
+dist/
+build/
+*.egg-info/
+
+# Airflow data lake
+dags/data/*
+
+# Keep empty folders
+!dags/data/.gitkeep
