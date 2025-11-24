@@ -4,7 +4,6 @@ import os
 from datetime import datetime, timedelta
 
 def generate_fake_data(num_rows=100):
-    # define some sample data
     cities = ['Budapest', 'Karachi', 'London', 'New York']
     drivers = ['Ali', 'John', 'Sarah', 'David', 'Emma', 'Khan']
 
@@ -24,14 +23,14 @@ def generate_fake_data(num_rows=100):
             'ride_time': ride_time.strftime("%Y-%m-%d %H:%M:%S")
         })
 
-    # make sure output folder exists
-    output_dir = os.path.join(os.path.dirname(__file__), '..', 'data', 'raw')#this line make sure you go outside the current folder and than find data floder and inside that data folder you find raw.
-    os.makedirs(output_dir, exist_ok=True) # it creates the folder path 
+    # Save to Bronze folder
+    bronze_dir = os.path.join(os.path.dirname(__file__), '..', 'data', 'bronze')
+    os.makedirs(bronze_dir, exist_ok=True)
 
-    output_path = os.path.join(output_dir, 'rides_raw.csv')
+    output_path = os.path.join(bronze_dir, 'rides_raw.csv')
     pd.DataFrame(data).to_csv(output_path, index=False)
 
-    print(f"✅ Raw data generated at: {output_path}")
+    print(f"🟫 Bronze data generated at: {output_path}")
 
 if __name__ == "__main__":
     generate_fake_data()
