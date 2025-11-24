@@ -2,7 +2,7 @@
 
 Below is the Azure-style Medallion Architecture diagram of this project:
 
-![Medallion Architecture](doc/diagram.png)
+![Medallion Architecture](doc/Diagram.png)
 
 Rideshare Data Engineering Pipeline
 Medallion Architecture (Bronze → Silver → Gold) with Airflow, Python & PostgreSQL
